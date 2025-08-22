@@ -1,0 +1,456 @@
+/* =============================
+   Global Styles
+============================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================
+   Header & Navigation
+============================= */
+header {
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.logo h1 {
+  font-size: 1.7rem;
+  margin: 0;
+  color: #ffcc66;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: #f0f0f0;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #ff5733;
+}
+
+nav a.active {
+  color: #ff9800;
+  font-weight: bold;
+  border-bottom: 2px solid #ff9800;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-top-btn {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffaa33;
+    color: #000;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    z-index: 1000;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-top-btn {
+    display: none;
+  }
+}
+
+/* =============================
+   Hero Section
+============================= */
+.hero {
+  background: url("hinhnen.jpg") center/cover no-repeat fixed;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1, 
+.hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #ffcc66;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+/* =============================
+   Section Wrapper
+============================= */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffaa33;
+}
+
+/* =============================
+   About Section
+============================= */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.about-content img {
+  flex: 1 1 40%;
+  max-width: 450px;
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex:  1 55%;
+  text-align: justify;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+/* =============================
+   Menu Section
+============================= */
+.menu {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.menu-item {
+  min-width: 200px;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.menu-item img:hover {
+  transform: scale(1.05);
+}
+
+.menu-item h3 {
+  color: #ff8855;
+}
+
+/* =============================
+   Chi Nhánh Section
+============================= */
+.branches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.branch {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* make equal height */
+}
+
+.branch:hover {
+  transform: translateY(-5px);
+}
+
+.branch h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.branch p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  flex-grow: 1; /* push iframe down */
+}
+
+.branch iframe {
+  width: 100%;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+/* Responsive: stack on smaller screens */
+@media (max-width: 992px) {
+  .branches {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .branches {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================
+   Contact Form
+============================= */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #222;
+  color: #f5f5f5;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e4471d;
+}
+
+.form-response {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* =============================
+   Modal
+============================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 80px;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.5); }
+  to   { transform: scale(1); }
+}
+
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffcc66;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff5733;
+}
+
+/* =============================
+   Footer
+============================= */
+footer {
+  background-color: #121212;
+  color: #999;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 50px;
+}
+
+/* =============================
+   Animations
+============================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =============================
+   Intro Animation
+============================= */
+#intro {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3000;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2.5s; /* delay before fade out */
+}
+
+.intro-logo {
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 1.5s ease forwards;
+}
+
+.intro-logo img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.intro-logo h1 {
+  color: #ffcc66;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
